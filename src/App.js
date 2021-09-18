@@ -3,8 +3,8 @@ import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { createContext, useEffect, useState } from "react";
-import Dashboard from "./components/Dashboard/Dashboard";
 import PrivateRoute from "./components/Login/PrivateRoute";
+import UserDashboard from "./components/Dashboard/UserDashboard";
 
 export const UserContext = createContext();
 
@@ -28,7 +28,7 @@ function App() {
           <Login />
         </Route>
         <Route path="/dashboard">
-          <Dashboard />
+          <UserDashboard />
         </Route>
       </Switch>
     </Router>
