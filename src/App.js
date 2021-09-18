@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
 import { createContext, useEffect, useState } from "react";
 import PrivateRoute from "./components/Login/PrivateRoute";
-import UserDashboard from "./components/Dashboard/UserDashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 export const UserContext = createContext();
+export const AppContext = createContext();
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
@@ -28,7 +29,7 @@ function App() {
           <Login />
         </Route>
         <Route path="/dashboard">
-          <UserDashboard />
+          <Dashboard />
         </Route>
       </Switch>
     </Router>
