@@ -8,10 +8,9 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import AboutUS from "./components/AboutUS/AboutUS";
 
 export const UserContext = createContext();
-export const AppContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState([]);
 
   // useEffect(() => {
   //   firebase.auth().onAuthStateChanged((user) => {
@@ -20,7 +19,7 @@ function App() {
   // }, []);
 
   return (
-    <UserContext.Provider value={loggedInUser, setLoggedInUser}>
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
     <Router>
       <Switch>
         <Route exact path="/">
@@ -29,9 +28,9 @@ function App() {
         <Route path="/about-us">
           <AboutUS />
         </Route>
-        <Route path="/dashboard">
+        <PrivateRoute path="/dashboard">
           <Dashboard />
-        </Route>
+        </PrivateRoute>
         <Route path="/login">
           <Login />
         </Route>

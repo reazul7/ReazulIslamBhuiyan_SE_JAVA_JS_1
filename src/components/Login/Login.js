@@ -4,12 +4,15 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/
 import firebaseConfig from "./firebase.config";
 import { UserContext } from "../../App";
 import { useHistory, useLocation } from "react-router";
-import NavBar from "../Home/NavBar";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
+  const [user, setUser] = useState({
+    isSignedIn: false,
+  })
+
   const history = useHistory();
   const location = useLocation();
   let { from } = location.state || { from: { pathname: "/" } };
@@ -25,10 +28,9 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
         var { displayName, email, photoURL } = result.user;
-        const signInUser = { name: displayName, email, photo: photoURL };
-        // setLoggedInUser(signInUser);
-        console.log(signInUser)
-        // localStorage.setItem('user', JSON.stringify(signInUser));
+        const signInUser = { isSignedIn: true, name: displayName, email };
+        setUser(signInUser);
+        setLoggedInUser(signInUser);
         history.replace(from);
       })
       .catch((error) => {
@@ -52,6 +54,7 @@ const Login = () => {
         <span className="absolute left-0 top-0 flex items-center justify-center h-full w-10 text-blue-500"><FcGoogle/></span>
         <span>Login with Google</span>
       </button>
+      {user.isSignedIn && <div><p>{user.name}</p></div>}
       <div className="relative mt-10 h-px bg-gray-300">
         <div className="absolute left-0 top-0 flex justify-center w-full -mt-2">
           <span className="bg-white px-4 text-xs text-gray-500 uppercase">Or Login With Email</span>
