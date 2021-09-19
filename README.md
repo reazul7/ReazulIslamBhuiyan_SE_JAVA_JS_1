@@ -7,7 +7,7 @@
   <a href="https://sweet-itech.web.app/" target="_blank">Live Site</a>
 </h2>
 <div align="center">
-  <img src="" alt="Demo"/>
+  <img src="https://i.ibb.co/YLygpnn/Screenshot-1.png" alt="Demo"/>
 </div>
 
 ## Built With
