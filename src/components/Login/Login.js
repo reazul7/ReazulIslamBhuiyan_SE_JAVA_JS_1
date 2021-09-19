@@ -38,13 +38,6 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromError(error);
       });
   }
-    
-  // signOut
-  // signOut(auth).then(() => {
-  //   alert("Sign-out successful.");
-  // }).catch((error) => {
-  //   console.log({error})
-  // });
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">

@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Transition } from "@headlessui/react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
+import { useHistory } from "react-router";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
+
+  let history = useHistory();  
+
+  const handleSignOut = () => {
+    setLoggedInUser({});
+    history.push("/");
+  }
 
   return (
     <nav className="bg-green-900">
@@ -39,12 +49,21 @@ function NavBar() {
                     Dashboard
                   </button>{" "}
                 </Link>
-                <Link to="/login">
+                {loggedInUser.email ? (
+                  <Link to="">
+                  {" "}
+                  <button onClick={handleSignOut} className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    Logout
+                  </button>{" "}
+                </Link>
+                ) : (
+                  <Link to="/login">
                   {" "}
                   <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Login
                   </button>{" "}
                 </Link>
+                )}
               </div>
             </div>
           </div>
@@ -113,17 +132,10 @@ function NavBar() {
                   Home
                 </button>{" "}
               </Link>
-              
               <Link to="/about-us">
                 {" "}
                 <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                   About US
-                </button>{" "}
-              </Link>
-              <Link to="/login">
-                {" "}
-                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
-                  Login
                 </button>{" "}
               </Link>
               <Link to="/dashboard">
@@ -132,6 +144,21 @@ function NavBar() {
                   Dashboard
                 </button>{" "}
               </Link>
+              {loggedInUser.email ? (
+                <Link to="">
+                {" "}
+                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                  Logout
+                </button>{" "}
+              </Link>
+              ) : (
+                <Link to="/login">
+                {" "}
+                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                  Login
+                </button>{" "}
+              </Link>
+              )}
             </div>
           </div>
         )}
