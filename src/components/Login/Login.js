@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [ setLoggedInUser ] = useContext(UserContext);
+  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
   const [user, setUser] = useState({
     isSignedIn: false,
   })

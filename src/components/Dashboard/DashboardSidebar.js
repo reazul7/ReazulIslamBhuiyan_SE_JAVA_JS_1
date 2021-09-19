@@ -73,7 +73,7 @@ function DashboardSidebar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [ setLoggedInUser ] = useContext(UserContext);
+  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
 
   let history = useHistory();  
 
@@ -81,6 +81,7 @@ function DashboardSidebar(props) {
     setLoggedInUser({});
     history.push("/");
   }
+
 
 
   const handleDrawerToggle = () => {

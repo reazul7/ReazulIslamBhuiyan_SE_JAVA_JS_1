@@ -4,7 +4,7 @@
 
 <h2 align="center">
   Sweet iTech<br/>
-  <a href="#" target="_blank">Live Site</a>
+  <a href="https://sweet-itech.web.app/" target="_blank">Live Site</a>
 </h2>
 <div align="center">
   <img src="" alt="Demo"/>
