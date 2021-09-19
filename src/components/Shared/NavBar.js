@@ -33,33 +33,33 @@ function NavBar() {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link to="/">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button className="text-white font-semibold hover:bg-green-800  hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium">
                     Home
                   </button>{" "}
                 </Link>
                 <Link to="/about-us">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button className="text-white font-semibold hover:bg-green-800  hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium">
                     About US
                   </button>{" "}
                 </Link>
                 <Link to="/dashboard">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button className="text-white font-semibold hover:bg-green-800  hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium">
                     Dashboard
                   </button>{" "}
                 </Link>
                 {loggedInUser.email ? (
                   <Link to="">
                   {" "}
-                  <button onClick={handleSignOut} className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button onClick={handleSignOut} className="text-white font-semibold hover:bg-green-800  hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium">
                     Logout
                   </button>{" "}
                 </Link>
                 ) : (
                   <Link to="/login">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button className="text-white font-semibold hover:bg-green-800  hover:text-yellow-500 px-3 py-2 rounded-md text-sm font-medium">
                     Login
                   </button>{" "}
                 </Link>
@@ -128,33 +128,33 @@ function NavBar() {
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link to="/">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-yellow-500 hover:bg-green-800 font-semibold  text-white block px-3 py-2 rounded-md text-base font-medium">
                   Home
                 </button>{" "}
               </Link>
               <Link to="/about-us">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-yellow-500 hover:bg-green-800 font-semibold  text-white block px-3 py-2 rounded-md text-base font-medium">
                   About US
                 </button>{" "}
               </Link>
               <Link to="/dashboard">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-yellow-500 hover:bg-green-800 font-semibold  text-white block px-3 py-2 rounded-md text-base font-medium">
                   Dashboard
                 </button>{" "}
               </Link>
               {loggedInUser.email ? (
                 <Link to="">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button onClick={handleSignOut} className="hover:text-yellow-500 hover:bg-green-800  font-semibold text-white block px-3 py-2 rounded-md text-base font-medium">
                   Logout
                 </button>{" "}
               </Link>
               ) : (
                 <Link to="/login">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-yellow-500 hover:bg-green-800 font-semibold  text-white block px-3 py-2 rounded-md text-base font-medium">
                   Login
                 </button>{" "}
               </Link>

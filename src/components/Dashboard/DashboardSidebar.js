@@ -18,8 +18,9 @@ import { Link, useRouteMatch } from "react-router-dom";
 import UserDashboardTopBar from "./UserDashboardTopBar";
 import { useHistory } from "react-router-dom";
 import { useContext } from "react";
-import { AppContext } from "../../App";
+import { UserContext } from "../../App";
 import DashboardRoute from "./DashboardRoute";
+import DashboardLogo from "../../images/dashboard-logo.png";
 
 // Icon
 import HomeIcon from "@material-ui/icons/Home";
@@ -28,6 +29,8 @@ import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
 import QueueIcon from "@material-ui/icons/Queue";
 import SettingsIcon from "@material-ui/icons/Settings";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+
 
 const drawerWidth = 240;
 
@@ -70,24 +73,19 @@ function DashboardSidebar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const history = useHistory();
-//   const { setLoggedInUser } = useContext(AppContext);
+  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
+
+  let history = useHistory();  
+
+  const handleSignOut = () => {
+    setLoggedInUser({});
+    history.push("/");
+  }
+
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-//   const handleLogout = () => {
-//     const user = JSON.parse(sessionStorage.getItem("user"));
-//     if (user !== null) {
-//       // history.replace('/')
-
-//       sessionStorage.setItem("user", JSON.stringify(null));
-//       setLoggedInUser({});
-//       history.push("/");
-//       // window.location.reload();
-//     }
-//   };
-
 
 // sidebar
   const IconBox1 = [
@@ -102,13 +100,14 @@ function DashboardSidebar(props) {
     <div>
       <Link to="/">
         <img
-          src="https://lh3.googleusercontent.com/proxy/oN-OAIIZuLAKfCDElw_4wLU4PeVFz2YRboKn9tvJJVeLL2njV4amaVvwlxGuTnW8eAhH2sJEcogjB5_4MBycNA6ee04AY_EdeG2TTal2iov-siIdl9dg"
+          src={DashboardLogo}
           alt="Sweet iTech"
           className="object-scale-down h-9 w-full my-1.5 mb-0"
         />
       </Link>
       <br />
-      {/* <div className={classes.toolbar} /> */}
+      
+      {/* top sidebar */}
       <Divider />
       <List>
         {[
@@ -127,8 +126,11 @@ function DashboardSidebar(props) {
           </ListItem>
         ))}
       </List>
+
       <Divider />
       <Divider />
+
+      {/* middle sidebar */}
       <List>
         {["Settings"].map((text, index) => (
           <ListItem
@@ -147,6 +149,24 @@ function DashboardSidebar(props) {
             to="/"
           >
             <ListItemIcon><HomeIcon /></ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      
+      <Divider />
+      <Divider />
+
+      {/* bottom sidebar*/}
+      <List>
+        {["Logout"].map((text, index) => (
+          <ListItem
+            key={text}
+            component={Link}
+            to={url + `/${text.split(" ").join("-").toLocaleLowerCase()}`}
+            onClick={handleSignOut}
+          >
+            <ListItemIcon><ExitToAppIcon/></ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
