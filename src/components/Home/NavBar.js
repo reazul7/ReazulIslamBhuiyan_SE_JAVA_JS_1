@@ -6,7 +6,7 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-50">
+    <nav className="bg-green-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -23,20 +23,26 @@ function NavBar() {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link to="/">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Home
                   </button>{" "}
                 </Link>
-                <Link to="/login">
+                <Link to="/about-us">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
-                    Login
+                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    About US
                   </button>{" "}
                 </Link>
                 <Link to="/dashboard">
                   {" "}
-                  <button className="text-gray-900 font-semibold hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Dashboard
+                  </button>{" "}
+                </Link>
+                <Link to="/login">
+                  {" "}
+                  <button className="text-gray-900 font-semibold hover:bg-green-800  hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                    Login
                   </button>{" "}
                 </Link>
               </div>
@@ -46,7 +52,7 @@ function NavBar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="bg-gray-100 inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-white hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-500 focus:ring-white"
+              className="bg-green-600 inline-flex items-center justify-center p-2 rounded-md text-green-900 hover:text-green-800 hover:bg-green-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-600 focus:ring-green-200"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -103,19 +109,26 @@ function NavBar() {
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <Link to="/">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-700 text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                   Home
+                </button>{" "}
+              </Link>
+              
+              <Link to="/about-us">
+                {" "}
+                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                  About US
                 </button>{" "}
               </Link>
               <Link to="/login">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-700 text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                   Login
                 </button>{" "}
               </Link>
               <Link to="/dashboard">
                 {" "}
-                <button className="hover:text-white hover:bg-gray-700 text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
+                <button className="hover:text-white hover:bg-gray-200 hover:text-gray-800  text-gray-900 block px-3 py-2 rounded-md text-base font-medium">
                   Dashboard
                 </button>{" "}
               </Link>

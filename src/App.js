@@ -5,6 +5,7 @@ import Login from "./components/Login/Login";
 import { createContext, useEffect, useState } from "react";
 import PrivateRoute from "./components/Login/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
+import AboutUS from "./components/AboutUS/AboutUS";
 
 export const UserContext = createContext();
 export const AppContext = createContext();
@@ -25,11 +26,14 @@ function App() {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="/login">
-          <Login />
+        <Route path="/about-us">
+          <AboutUS />
         </Route>
         <Route path="/dashboard">
           <Dashboard />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
       </Switch>
     </Router>

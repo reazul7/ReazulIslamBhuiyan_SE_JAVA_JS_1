@@ -26,7 +26,8 @@ const Login = () => {
         const user = result.user;
         var { displayName, email, photoURL } = result.user;
         const signInUser = { name: displayName, email, photo: photoURL };
-        setLoggedInUser(signInUser);
+        // setLoggedInUser(signInUser);
+        console.log(signInUser)
         // localStorage.setItem('user', JSON.stringify(signInUser));
         history.replace(from);
       })
