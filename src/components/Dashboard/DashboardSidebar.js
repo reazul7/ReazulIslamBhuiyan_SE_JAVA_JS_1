@@ -73,7 +73,7 @@ function DashboardSidebar(props) {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
+  const [ setLoggedInUser ] = useContext(UserContext);
 
   let history = useHistory();  
 

@@ -33,8 +33,6 @@ const AddProduct = () => {
                 <span className="text-red-500">{errors.img?.type === 'required' && "Product Image is required"}</span>
                 <br/>
 
-
-
                 <input className="outline-none w-full p-2 mb-1.5 text-white bg-black" type="submit" value="Add Products" />
             </form>
         </div>

@@ -2,7 +2,7 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "./components/Login/Login";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import PrivateRoute from "./components/Login/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard";
 import AboutUS from "./components/AboutUS/AboutUS";

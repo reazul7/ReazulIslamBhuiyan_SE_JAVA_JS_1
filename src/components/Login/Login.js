@@ -8,7 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
+  const [ setLoggedInUser ] = useContext(UserContext);
   const [user, setUser] = useState({
     isSignedIn: false,
   })
@@ -27,7 +27,7 @@ const Login = () => {
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const user = result.user;
-        var { displayName, email, photoURL } = result.user;
+        var { displayName, email } = result.user;
         const signInUser = { isSignedIn: true, name: displayName, email };
         setUser(signInUser);
         setLoggedInUser(signInUser);
