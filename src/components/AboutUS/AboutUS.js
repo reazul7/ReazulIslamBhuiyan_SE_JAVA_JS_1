@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 import NavBar from '../Shared/NavBar';
 
 const AboutUS = () => {
@@ -97,12 +98,11 @@ const AboutUS = () => {
                                 <p className="leading-relaxed text-base">End to end solution to manage every aspect of E-Commerce and F-Commerce businesses, including mobile app integration</p>
                             </div>
                         </div>
-
-                        
-
                     </div>
                 </div>
             </section>
+
+            <Footer/>
         </div>
     );
 };
